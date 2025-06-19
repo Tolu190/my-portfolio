@@ -1,0 +1,328 @@
+             
+body {
+    background: linear-gradient(135deg, #0A192F 30%, #0073E6 70%);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.8s ease-in-out;
+}  
+/* Smooth Scroll Effects */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Sticky Header */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 25, 47, 0.5); /* Semi-transparent */
+    backdrop-filter: blur(8px); /* Blur for better readability */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Font for Developer Name */
+.navbar-brand {
+font-family: 'Poppins', sans-serif;
+font-size: 1.8rem;
+font-weight: bold;
+background: linear-gradient(45deg, #FFC107, #0073E6);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-shadow: 0px 0px 6px rgba(255, 193, 7, 0.5);
+transform: scale(1.05);
+transition: all 0.3s ease-in-out;
+}
+
+/* When user scrolls, navbar becomes solid */
+.navbar.scrolled {
+    background: rgba(10, 25, 47, 0.9); /* Darker for better contrast */
+}
+
+
+ @keyframes bgGradient {
+    0% { background: linear-gradient(135deg, #0A192F 30%, #0073E6 70%); }
+    50% { background: linear-gradient(135deg, #1A1A2E 30%, #1E90FF 70%); }
+    100% { background: linear-gradient(135deg, #16213E 30%, #0073E6 70%); }
+}
+
+/* Section Transition - Smooth Gradient Blend */
+.section {
+    padding: 60px 0; /* Reduced space */
+    position: relative;
+}
+
+.section::after {
+    content: "";
+    position: absolute;
+    bottom: 50;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.2), rgba(255, 255, 255, 0));
+}
+
+/* Hero Section - Adjusted Padding for Mobile */
+.hero-section {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 100px; /* Moves content down */
+}
+
+.hero-section img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+position: absolute;
+opacity: 0;
+transition: opacity 1.5s ease-in-out;
+}
+
+.image-overlay {
+position: absolute;
+width: 100%;
+height: 100%;
+background: rgba(10, 25, 47, 0.75); /* Stronger overlay */
+z-index: 1;
+}
+
+/* Ensure text is on top */
+.hero-section .container {
+position: relative;
+z-index: 2;
+color: white;
+}
+
+
+.profile-image {
+width: 250px; /* Slightly larger */
+height: auto; /* Adjust based on aspect ratio */
+border-radius: 15px; /* Soft curve instead of full circle */
+box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3); /* Adds depth */
+margin-bottom: 20px;
+}
+
+
+.animated-title {
+    font-size: 3rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    text-shadow: 3px 3px 6px rgba(255, 193, 7, 0.5);
+}
+
+button.cta {
+    background: #FFC107;
+    color: #0A192F;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.cta:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 193, 7, 1);
+}
+
+        
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+        
+.skills i {
+    font-size: 2.5rem;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.skills i:hover {
+    transform: scale(1.3);
+    color: #FFC107;
+    text-shadow: 0px 0px 5px rgba(255, 193, 7, 0.5);
+}
+
+/* Project Section */
+/* Project Section - Blended Transition */
+#projects {
+    background: linear-gradient(to bottom, #0A192F, #0073E6);
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Adjustments */
+.project-thumbnail {
+    width: 100%;
+    height: 160px; /* Slightly smaller */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.7); /* Darkened overlay */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Ensure Text is Visible */
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    color: white;
+    z-index: 2;
+}
+
+/* Hover Effect: Darken Overlay */
+.project-card:hover .overlay {
+    opacity: 0.85;
+}
+
+
+
+.parallax {
+background: url('your-image.jpg') no-repeat center center/cover;
+height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+font-size: 2rem;
+font-weight: bold;
+background-attachment: fixed;
+}
+
+/* Contact Section - Dark Overlay */
+#contact {
+    position: relative;
+    background: url('../tech-background.jpg') no-repeat center center/cover;
+    padding: 60px 0; /* Reduced height */
+    color: white;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 22, 43, 0.75); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Ensure Contact Form Text Stays Visible */
+#contact .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background: #0073E6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+/* Fade-in effect */
+#contact-form {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Show form when visible */
+#contact-form.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animated icons */
+.contact-icons i {
+    font-size: 2rem;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons i:hover {
+    transform: scale(1.2);
+    color: #FFC107;
+}
+
+/* General Fade-In Effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+
+/* Staggered Animation Effect */
+.fade-in:nth-child(odd) {
+    transition-delay: 0.3s;
+}
+
+.fade-in:nth-child(even) {
+    transition-delay: 0.6s;
+}
+
+
+/* When section becomes visible */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+
+
+
+
+
+
+
+
+
